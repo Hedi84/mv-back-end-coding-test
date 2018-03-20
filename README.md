@@ -1,5 +1,9 @@
 # Model Village Coding Test: Back-End Engineer
 
+**Please upload this project to your preferred source control platform and share with Model Village. Place your work inside the `/test` folder**
+
+We’d like to see how you approach this challenge, and what process you take, so please aim to push regular commits to the repository as you work through the task.
+
 ![list design](./assets/influencer_list_design.png)
 
 For this coding test, we’d like you to build out the above interface as a Ruby  application.
@@ -14,7 +18,3 @@ You should:
 * Use the example_data or design a MySQL database schema of your own.
 * Allow the user to sort the list.
 * Stick to the above design as much as possible.
-
-**Please push directly to this repo, do not create a fork. Place your work inside the `/test` folder**
-
-We’d like to see how you approach this challenge, and what process you take, so please aim to push regular commits to the repository as you work through the task.
