@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  influencer_full_name: MyString
+  influencer_instragram_username: MyString
+  influencer_instagram_profile_image: MyString
+  statistics_followers: 1
+  statistics_engagement: 1.5
+
+two:
+  influencer_full_name: MyString
+  influencer_instragram_username: MyString
+  influencer_instagram_profile_image: MyString
+  statistics_followers: 1
+  statistics_engagement: 1.5
