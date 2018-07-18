@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'starred_influencers/new'
-  get 'starred_influencers/create'
-  get 'starred_influencers/show'
-  get 'starred_influencers/index'
-  get 'influencers/index'
+  root to: 'pages#home'
+resources :influencers, only: [:index, :show]
+resources :starred_influencers, only: [:create, :destroy]
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
