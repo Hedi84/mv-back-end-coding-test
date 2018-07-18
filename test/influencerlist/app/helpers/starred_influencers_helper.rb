@@ -1,0 +1,2 @@
+module StarredInfluencersHelper
+end
