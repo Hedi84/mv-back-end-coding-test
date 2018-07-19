@@ -1,16 +1,30 @@
 
 
-<% @influencers.each do |influencer| %>
+<div class="home-flex">
+  <div class="influencer-container">
+    <% @influencers.sample(3).each do |influencer| %>
+      <div class="suggested-influencer">
+        <%= image_tag influencer.influencer_instagram_profile_image, class: "profile-photo" %>
+        <div>
+          <h3><%= influencer.influencer_full_name %></h3>
+          <p><%= influencer.influencer_instagram_username %> </p>
+        </div>
+        <div>
+          <%= link_to "+", influencer_starred_influencers_path(influencer), method: "post" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-  <p><%= influencer.influencer_instagram_username %> <%= influencer.statistics_followers%> <%= influencer.statistics_engagement %><p> <%= image_tag influencer.influencer_instagram_profile_image %>
-    <%= link_to "star this user", influencer_starred_influencers_path(influencer), method: "post" %>
+
+        <div class="starred-containter" >
+     <% @starred_influencers.each do |starred_influencer| %>
 
 
-<% end %>
+            <p><%= starred_influencer.influencer.influencer_instagram_username %> <%= starred_influencer.influencer.statistics_followers%> <%= starred_influencer.influencer.statistics_engagement %></p>
+            <%= image_tag starred_influencer.influencer.influencer_instagram_profile_image, class: "profile-photo" %>
+                <%= link_to "delete", starred_influencer_path(starred_influencer), method: "delete" %>
+      <% end %>
 
-
-<% @starred_influencers.each do |starred_influencer| %>
-<p><%= starred_influencer.influencer.influencer_instagram_username %> <%= starred_influencer.influencer.statistics_followers%> <%= starred_influencer.influencer.statistics_engagement %><p> <%= image_tag starred_influencer.influencer.influencer_instagram_profile_image %>
-    <%= link_to "delete", starred_influencer_path(starred_influencer), method: "delete" %>
-<% end %>
-
+  </div>
+</div>
