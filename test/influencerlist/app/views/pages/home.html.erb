@@ -3,6 +3,13 @@
 <% @influencers.each do |influencer| %>
 
   <p><%= influencer.influencer_instagram_username %> <%= influencer.statistics_followers%> <%= influencer.statistics_engagement %><p> <%= image_tag influencer.influencer_instagram_profile_image %>
+    <%= link_to "star this user", influencer_starred_influencers_path(influencer), method: "post" %>
 
+
+<% end %>
+
+
+<% @starred_influencers.each do |starred_influencer| %>
+<%= starred_influencer.influencer.influencer_instagram_username %>
 <% end %>
 

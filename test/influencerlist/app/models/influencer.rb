@@ -1,3 +1,3 @@
 class Influencer < ApplicationRecord
-  has_many :users, through: :starred_influencers
+  has_many :starred_influencers, dependent: :destroy
 end
