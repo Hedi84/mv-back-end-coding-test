@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_135632) do
+ActiveRecord::Schema.define(version: 2018_07_19_085924) do
 
   create_table "influencers", force: :cascade do |t|
     t.string "influencer_full_name"
-    t.string "influencer_instragram_username"
+    t.string "influencer_instagram_username"
     t.string "influencer_instagram_profile_image"
     t.integer "statistics_followers"
     t.float "statistics_engagement"
