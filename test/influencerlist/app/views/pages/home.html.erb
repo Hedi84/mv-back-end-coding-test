@@ -1,4 +1,8 @@
+
+
 <% @influencers.each do |influencer| %>
-  <p><%= influencer.influencer_instagram_username %><p>
+
+  <p><%= influencer.influencer_instagram_username %> <%= influencer.statistics_followers%> <%= influencer.statistics_engagement %><p> <%= image_tag influencer.influencer_instagram_profile_image %>
+
 <% end %>
 
