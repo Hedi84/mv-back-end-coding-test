@@ -10,6 +10,7 @@
 
 
 <% @starred_influencers.each do |starred_influencer| %>
-<%= starred_influencer.influencer.influencer_instagram_username %>
+<p><%= starred_influencer.influencer.influencer_instagram_username %> <%= starred_influencer.influencer.statistics_followers%> <%= starred_influencer.influencer.statistics_engagement %><p> <%= image_tag starred_influencer.influencer.influencer_instagram_profile_image %>
+    <%= link_to "delete", starred_influencer_path(starred_influencer), method: "delete" %>
 <% end %>
 
