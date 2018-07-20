@@ -1,6 +1,7 @@
 
 
 <div class="home-flex">
+
   <div class="influencer-container">
     <h1>Suggested Influencers:</h1>
     <% @influencers.sample(5).each do |influencer| %>
@@ -23,18 +24,27 @@
     <h1>Starred Influencers:</h1>
      <% @starred_influencers.each do |starred_influencer| %>
       <div class="starred-influencer">
-        <%= image_tag starred_influencer.influencer.influencer_instagram_profile_image, class: "profile-photo" %>
-        <div>
-          <h3><%= starred_influencer.influencer.influencer_full_name %></h3>
-          <p><%= starred_influencer.influencer.influencer_instagram_username %></p>
+        <div class="inner-flex">
+          <%= image_tag starred_influencer.influencer.influencer_instagram_profile_image, class: "profile-photo" %>
+          <div class="line">
+            <h3><%= starred_influencer.influencer.influencer_full_name %></h3>
+            <p><%= starred_influencer.influencer.influencer_instagram_username %></p>
+          </div>
         </div>
-        <div>
-          <p><%= starred_influencer.influencer.statistics_followers%><br><%= starred_influencer.influencer.statistics_engagement %></p>
-        </div>
-        <div class="symbol">
-          <%= link_to "x", starred_influencer_path(starred_influencer), method: "delete" %>
+        <div class="inner-flex">
+          <div class="line">
+            <h3><%= number_with_delimiter(starred_influencer.influencer.statistics_followers, :delimiter => ',') %> </h3>
+            <p>Followers </p>
+          </div>
+          <div class="line">
+            <h3><%= starred_influencer.influencer.statistics_engagement %>%</h3> <p>Engagement </p>
+          </div>
+          <div class="symbol">
+            <%= link_to "✕", starred_influencer_path(starred_influencer), method: "delete" %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>
