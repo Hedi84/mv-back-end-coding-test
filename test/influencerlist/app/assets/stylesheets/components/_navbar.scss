@@ -4,8 +4,19 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  background-color: #f9f7f7;
+  background-color: #FBF9F9;
   margin-bottom: 15px;
   flex-direction: row;
 
+}
+
+.element {
+  margin-left: 25px;
+  font-size: 20px;
+  color: 8C8C8C;
+  a {
+    font-style: bold;
+    text-decoration: none;
+    color: 8C8C8C;
+  }
 }
