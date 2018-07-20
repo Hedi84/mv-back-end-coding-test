@@ -1,5 +1,7 @@
 body {
-  background-color: #f9f7f7
+  background-color: #f9f7f7;
+  margin-left: 35px;
+  margin-right: 35px;
 }
 
 .home-flex {
@@ -11,30 +13,25 @@ body {
 }
 
 .influencer-container {
-  // display:flex;
-  // justify-content: space-around;
-  // flex-direction: column;
-  width: 25%;
-  // border-radius: 0.5px;
-  height: 100vh;
+  width: 35%;
   border-right-style: dashed;
-
   border-right: 1px solid #e8e5e5;
 
 
 }
 
 .starred-containter {
-  width: 75%
+  width: 65%;
+
 }
 
 .suggested-influencer {
   display: flex;
-  // text-align: center;
-  // justify-content: space-around;
-
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
+  margin-bottom: 20px;
 }
 
 .profile-photo {
@@ -43,5 +40,35 @@ body {
 }
 
 .starred_influencer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  border-right-style: dashed;
+  border: 1px solid #e8e5e5;
 
+}
+
+.symbol {
+  margin-right: 20px;
+  a {
+    color: #BDBCBC;
+    text-decoration: none;
+    font-size: 26px;
+
+
+  }
+}
+h3, h1 {
+  color: #2B2929;
+}
+p {
+  color: #989595;
+  font-weight: lighter;
+}
+
+.line {
+  line-height: 0.7;
 }
