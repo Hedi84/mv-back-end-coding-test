@@ -22,25 +22,34 @@
 
   <div class="starred-containter" >
     <h1>Starred Influencers:</h1>
-     <% @starred_influencers.each do |starred_influencer| %>
+
+
+
+
+
+
+
+     <% @influencers_starred.each do |influencer| %>
       <div class="starred-influencer">
         <div class="inner-flex">
-          <%= image_tag starred_influencer.influencer.influencer_instagram_profile_image, class: "profile-photo" %>
+          <%= image_tag influencer.influencer_instagram_profile_image, class: "profile-photo" %>
           <div class="line">
-            <h3><%= starred_influencer.influencer.influencer_full_name %></h3>
-            <p><%= starred_influencer.influencer.influencer_instagram_username %></p>
+            <h3><%= influencer.influencer_full_name %></h3>
+            <p><%= influencer.influencer_instagram_username %></p>
           </div>
         </div>
         <div class="inner-flex">
           <div class="line">
-            <h3><%= number_with_delimiter(starred_influencer.influencer.statistics_followers, :delimiter => ',') %> </h3>
+            <h3><%= number_with_delimiter(influencer.statistics_followers, :delimiter => ',') %> </h3>
             <p>Followers </p>
           </div>
           <div class="line">
-            <h3><%= starred_influencer.influencer.statistics_engagement %>%</h3> <p>Engagement </p>
+            <h3><%= influencer.statistics_engagement %>%</h3> <p>Engagement </p>
           </div>
           <div class="symbol">
-            <%= link_to "✕", starred_influencer_path(starred_influencer), method: "delete" %>
+            <% starred_influencer = @starred_influencers.where(influencer_id: influencer.id).first %>
+            <% id = starred_influencer.id %>
+            <%= link_to "✕", starred_influencer_path(id), method: "delete" %>
           </div>
         </div>
       </div>
