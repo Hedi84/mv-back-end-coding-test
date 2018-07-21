@@ -1,14 +1,7 @@
 class PagesController < ApplicationController
 
-
-
   def home
-
-
-    @hash = {
-      "statistics engagement desc" => "filter"
-    }
-    @user = current_user
+      @user = current_user
     @influencers = Influencer.all
     @starred_influencers = @user.starred_influencers
     ids = []
@@ -44,9 +37,4 @@ class PagesController < ApplicationController
       influencers_starred.sort_by! { |a| a.influencer_instagram_username.downcase }
     end
   end
-
-  # private
-
-
-
 end

@@ -1,6 +1,5 @@
 class StarredInfluencersController < ApplicationController
 
-
   def index
     @starred_influencers = StarredInfluencer.all
   end
@@ -13,7 +12,6 @@ class StarredInfluencersController < ApplicationController
     @starred_influencer.save
     redirect_to root_path
   end
-
 
   def destroy
     @starred_influencer= StarredInfluencer.find(params[:id])

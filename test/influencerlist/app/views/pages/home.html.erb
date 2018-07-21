@@ -1,7 +1,6 @@
 
 
 <div class="home-flex">
-
   <div class="influencer-container">
     <h1>Suggested Influencers:</h1>
     <% @influencers.sample(5).each do |influencer| %>
@@ -19,7 +18,6 @@
       <% end %>
     <% end %>
   </div>
-
   <div class="starred-containter" >
     <div class="flex-el">
       <h1>Starred Influencers:</h1>
@@ -29,12 +27,6 @@
         <% end %>
       </div>
     </div>
-
-
-
-
-
-
      <% @influencers_starred.each do |influencer| %>
       <div class="starred-influencer">
         <div class="inner-flex">
@@ -61,5 +53,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
