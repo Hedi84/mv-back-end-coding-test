@@ -21,8 +21,14 @@
   </div>
 
   <div class="starred-containter" >
-    <h1>Starred Influencers:</h1>
-
+    <div class="flex-el">
+      <h1>Starred Influencers:</h1>
+      <div>
+        <%= form_tag root_path, :method => 'get' do %>
+        <%= select_tag(:sort, options_for_select(@user_options),  class: 'form-control', onchange: 'this.form.submit();') %>
+        <% end %>
+      </div>
+    </div>
 
 
 
