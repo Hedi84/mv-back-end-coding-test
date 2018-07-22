@@ -4,17 +4,18 @@
   <div class="influencer-container">
     <h1>Suggested Influencers:</h1>
     <% @influencers.sample(5).each do |influencer| %>
+      <!-- Only give suggestions that are not already starred influencers -->
       <% if @ids.exclude? influencer.id %>
-      <div class="suggested-influencer">
-        <%= image_tag influencer.influencer_instagram_profile_image, class: "profile-photo" %>
-        <div class="line">
-          <h3><%= influencer.influencer_full_name %></h3>
-          <p><%= influencer.influencer_instagram_username %></p>
+        <div class="suggested-influencer">
+          <%= image_tag influencer.influencer_instagram_profile_image, class: "profile-photo" %>
+          <div class="line">
+            <h3><%= influencer.influencer_full_name %></h3>
+            <p><%= influencer.influencer_instagram_username %></p>
+          </div>
+          <div class="symbol">
+            <%= link_to "+", influencer_starred_influencers_path(influencer), method: "post" %>
+          </div>
         </div>
-        <div class="symbol">
-          <%= link_to "+", influencer_starred_influencers_path(influencer), method: "post" %>
-        </div>
-      </div>
       <% end %>
     <% end %>
   </div>
@@ -23,7 +24,7 @@
       <h1>Starred Influencers:</h1>
       <div>
         <%= form_tag root_path, :method => 'get' do %>
-        <%= select_tag(:sort, options_for_select(@user_options),  class: 'form-control', onchange: 'this.form.submit();') %>
+          <%= select_tag(:sort, options_for_select(@user_options),  class: 'form-control', onchange: 'this.form.submit();') %>
         <% end %>
       </div>
     </div>
@@ -46,6 +47,7 @@
             <h3><%= influencer.statistics_engagement %>%</h3> <p>Engagement </p>
           </div>
           <div class="symbol">
+            <!-- Using the influencer id to find the starred influencer that needs deleted -->
             <% starred_influencer = @starred_influencers.where(influencer_id: influencer.id).first %>
             <% id = starred_influencer.id %>
             <%= link_to "✕", starred_influencer_path(id), method: "delete" %>

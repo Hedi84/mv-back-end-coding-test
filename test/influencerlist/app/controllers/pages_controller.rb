@@ -1,15 +1,16 @@
 class PagesController < ApplicationController
 
   def home
-      @user = current_user
+    @user = current_user
     @influencers = Influencer.all
     @starred_influencers = @user.starred_influencers
     ids = []
       @starred_influencers.each do |starred_influencer|
-       ids << starred_influencer.influencer_id
+        ids << starred_influencer.influencer_id
       end
-      @ids = ids
-
+    # using the influencers that were used to create starred influencers was
+    # easier in this case. So they are collected by influencer_id
+    @ids = ids
     influencers_starred = []
     @ids.each do |id|
       @influencer = Influencer.find(id)
@@ -17,6 +18,8 @@ class PagesController < ApplicationController
       @influencers_starred = influencers_starred
     end
 
+     # these are the paris for the dropdown to filter, the first is for the user
+     # and the second is for the if statement to sort by'
      @user_options = [["Sort by", ""],["Engagement (Low-High)", "statistics engagement desc."], ["Engagement (High-Low)", "statistics engagement asc."], ["Followers (Low-High)", "followers desc."], ["Followers (High-Low)", "followers asc."], ["Full Name", "name"], ["User Name", "username"]]
 
     filter = params[:sort]

@@ -1,8 +1,7 @@
 class StarredInfluencersController < ApplicationController
 
-  def index
-    @starred_influencers = StarredInfluencer.all
-  end
+  # only create and destroy CRUD actions are needed here, since they are
+  # displayed on home.
 
   def create
     @influencer = Influencer.find(params[:influencer_id])
