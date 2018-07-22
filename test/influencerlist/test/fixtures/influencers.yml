@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  influencer_full_name: MyString
-  influencer_instragram_username: MyString
-  influencer_instagram_profile_image: MyString
+  influencer_full_name: "Hedi van Meurs"
+  influencer_instagram_username: "Hedi84"
+  influencer_instagram_profile_image: "https://avatars2.githubusercontent.com/u/37661027?s=460&v=4"
   statistics_followers: 1
   statistics_engagement: 1.5
+  id: 1
 
 two:
-  influencer_full_name: MyString
-  influencer_instragram_username: MyString
-  influencer_instagram_profile_image: MyString
+  influencer_full_name: "Laura Kelly"
+  influencer_instagram_username: "LK1993"
+  influencer_instagram_profile_image: "http://www.bistiproofpage.com/wp-content/uploads/2018/04/cute-profile-pics-for-whatsapp-images.png"
   statistics_followers: 1
   statistics_engagement: 1.5
+  id: 2
