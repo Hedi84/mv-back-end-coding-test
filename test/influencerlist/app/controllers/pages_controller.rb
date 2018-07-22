@@ -18,7 +18,7 @@ class PagesController < ApplicationController
       @influencers_starred = influencers_starred
     end
 
-     # these are the paris for the dropdown to filter, the first is for the user
+     # these are the params for the dropdown to filter, the first is for the user
      # and the second is for the if statement to sort by'
      @user_options = [["Sort by", ""],["Engagement (Low-High)", "statistics engagement desc."], ["Engagement (High-Low)", "statistics engagement asc."], ["Followers (Low-High)", "followers desc."], ["Followers (High-Low)", "followers asc."], ["Full Name", "name"], ["User Name", "username"]]
 
