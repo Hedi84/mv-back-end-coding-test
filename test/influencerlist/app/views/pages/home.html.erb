@@ -27,6 +27,7 @@
         <% end %>
       </div>
     </div>
+    <% if @influencers_starred %>
      <% @influencers_starred.each do |influencer| %>
       <div class="starred-influencer">
         <div class="inner-flex">
@@ -51,6 +52,7 @@
           </div>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
